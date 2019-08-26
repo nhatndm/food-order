@@ -12,7 +12,7 @@ async function bootstrap() {
     .setTitle('Food Order Api Documentation')
     .setDescription('This is documentation for api implementation')
     .setVersion('1.0.0')
-    .setSchemes('http')
+    .setSchemes('http', 'https')
     .setBasePath('v1/')
     .addBearerAuth()
     .build();
