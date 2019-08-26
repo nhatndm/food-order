@@ -12,8 +12,9 @@ async function bootstrap() {
     .setTitle('Food Order Api Documentation')
     .setDescription('This is documentation for api implementation')
     .setVersion('1.0.0')
-    .setSchemes('https')
+    .setSchemes('http')
     .setBasePath('v1/')
+    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, options);
