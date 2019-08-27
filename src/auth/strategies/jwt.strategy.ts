@@ -4,13 +4,14 @@ import { UserService } from '../../user/user.service';
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { FilterUserDto } from 'src/user/dto/user-filter-dto';
 import { AuthPayload } from '../auth.payload';
+import { Configuration } from '../../configuration/config.service';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(private readonly userService: UserService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      secretOrKey: '8wJJE0nEjw',
+      secretOrKey: Configuration.SECRET_KEY,
     });
   }
 

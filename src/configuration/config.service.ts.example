@@ -1,0 +1,8 @@
+export class Configuration {
+  static readonly DB_HOST: string = 'DB_HOST';
+  static readonly DB_PORT: number = DB_PORT;
+  static readonly DB_USERNAME: string = 'DB_USERNAME';
+  static readonly DB_NAME: string = 'DB_NAME';
+  static readonly DB_PASSWORD: string = 'DB_PASSWORD';
+  static readonly SECRET_KEY: string = 'SECRET_KEY';
+}
