@@ -1,18 +1,13 @@
 import { ConnectionOptions } from 'typeorm';
-import * as dotenv from 'dotenv';
-import * as fs from 'fs';
-
-const data: any = fs.readFileSync(`${__dirname}/.env`);
-
-const env = dotenv.parse(data);
+import { Configuration } from './src/configuration/config.service';
 
 const config: ConnectionOptions = {
   type: 'postgres',
-  host: env['DB_HOST'],
-  port: Number.parseInt(env['DB_PORT']),
-  username: env['DB_USERNAME'],
-  password: env['DB_PASSWORD'],
-  database: env['DB_NAME'],
+  host: Configuration.DB_HOST,
+  port: Configuration.DB_PORT,
+  username: Configuration.DB_USERNAME,
+  password: Configuration.DB_PASSWORD,
+  database: Configuration.DB_NAME,
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
 
   // We are using migrations, synchronize should be set to false.
